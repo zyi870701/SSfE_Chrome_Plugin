@@ -1,6 +1,7 @@
 // Copyright (c) 2012,2013 Peter Coles - http://mrcoles.com/ - All rights reserved.
 // Use of this source code is governed by the MIT License found in LICENSE
 $(document).ready(function() {
+    
     var background = chrome.extension.getBackgroundPage();
     checkauth();    // Whenever click popup button, load it first to check cookies
     function checkauth() {
@@ -9,6 +10,7 @@ $(document).ready(function() {
     $('#login').on('click', login);
     $('#logout').on('click', logout);
     function login() {
+        background.server = $('#SERVER').val();
         var account = $('#ACCOUNT').val();
         var password = $('#PASSWORD').val();
         background.login(account, password, showinfo);
@@ -18,6 +20,7 @@ $(document).ready(function() {
         $('#ACCOUNT').val('');
         $('#PASSWORD').val('');
         $('#test').text('');
+        $('#SERVER').val('');
     }
     /*
     function upload() {
@@ -36,17 +39,17 @@ $(document).ready(function() {
         if (data == 1) {
             //$('#test').text("already login");
             $('#logout,#imagename,#upload,#test2,#wrap').show();
-            $('#login,#ACCOUNT,#PASSWORD,#test,label').hide();
+            $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').hide();
 
         } else if (data == 0) {
             //$('#test').text("you have to login");
             $('#logout,#imagename,#upload,#test2,#wrap').hide();
-            $('#login,#ACCOUNT,#PASSWORD,#test,label').show();
+            $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').show();
         } else {
             $('#test').text(data);
             //$('#test').text("you have to login");
             $('#logout,#imagename,#upload,#test2,#wrap').hide();
-            $('#login,#ACCOUNT,#PASSWORD,#test,label').show();
+            $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').show();
         }
 
     }
