@@ -142,7 +142,7 @@ chrome.extension.onRequest.addListener(function(request, sender, callback) {
 function capturePage(data, sender, callback) {
     var canvas;
 
-    xx('bar').style.width = parseInt(data.complete * 100, 10) + '%';
+    //xx('bar').style.width = parseInt(data.complete * 100, 10) + '%';
 
     // Get window.devicePixelRatio from the page, not the popup
     var scale = data.devicePixelRatio && data.devicePixelRatio !== 1 ?

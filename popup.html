@@ -40,18 +40,59 @@
         background: #fff url(loader.gif) scroll no-repeat center right;
         }
         p { word-wrap: break-word; }
+	button {
+	-moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	-webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+	background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+	background-color:#33bdef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+	background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+	background-color:#019ad2;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
         </style>
     </head>
     <body>
+	<img src="logo.png">
         <div id="wrap">
             <div id="loading">
-                <div class="loader"><div class="bar" id="bar"></div></div>
-                <div class="clr">
+                <!-- <div class="loader"><div class="bar" id="bar"></div></div> -->
+		<div class="clr">
                     <br>
                     <p>
                         For best results, don’t mouse over the page during
                         capture and set “Actual Size” from the “View” menu.<br>
-                        Your finished image will open in a new window.
+                        Your finished image will be uploaded to your SafeSync.
                     </p>
                 </div>
             </div>
@@ -69,15 +110,27 @@
                 version of Chrome.
             </div>
         </div>
-
-        <label>Server:</label>
-        <input type="text" id="SERVER" placeholder="dev.ssfe.in">
-        <label>Account:</label>
-        <input type="text" id="ACCOUNT">
-        <label>Password:</label>
-        <input type="password" id="PASSWORD">
-        <button id="login">Login</button>
-        <p id ="test"></p>
+	
+	<center>
+	<table>
+		<tr>
+        		<td><label style="font-weight:lighter"><font size="4">Username:</font></label></td>
+        		<td><input type="text" id="ACCOUNT"></td>
+		</tr>
+		<tr>
+			<td><label style="font-weight:lighter"><font size="4">Password:</font></label></td>
+        		<td><input type="password" id="PASSWORD"></td>
+		</tr>
+		<tr>
+			<td><label style="font-weight:lighter"><font size="4">Server:</font></label></td>
+        		<td><input type="text" id="SERVER" placeholder="dev.ssfe.in"></td>
+		</tr>
+	</table>
+	</center>
+	<p align="right">
+	<button id="login">Sign in</button>
+        </p>
+	<p id ="test"></p>
         
         <button id="upload">Upload</button>
         <input type="text" id="imagename" placeholder="enter the image name">
