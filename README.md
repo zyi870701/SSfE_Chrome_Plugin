@@ -12,7 +12,9 @@ It is a Google Chrome plugin which could capture web full page screenshots and u
 * GET /api/v2/home
 * PUT /api/v2/${obf_id}/snapshots/${file_name}
 
-
+### Developer
+* Johnny - 2015 intern student
+* Ben - 2015 intern student
 
 Full Page Screen Capture
 ========================
