@@ -59,30 +59,33 @@ function logout(callback) {
 
 
 function upload(imagename, something, callback) {
+
+    if( /[^a-zA-Z0-9\-]/.test( imagename ) ) {callback("Do not use any special characters.")}
+    else{
     $.ajax({
         url: "https://"+server+"/api/v2/home",
         type: "GET",	// you will get url like "https://10.1.193.204/api/v2/Hzw" personal root folder 
         dataType: "html",
         success: function(data) {
             var res = JSON.parse(data);
-            var obfid = res.uri;
-            console.log(obfid);
+            var url_obfid = res.uri;
+            console.log(url_obfid);
             $.ajax({
-                url: obfid + "snapshots/"+imagename+".png",
+                url: url_obfid + "snapshots/"+imagename+".png",
                 type: "PUT",
                 headers: {"X-Humyo-Create-Dirs":"1"},
                 contentType: "image/png",
                 data: something,
                 processData: false,
                 success: function(data) {
-                    callback("Upload successfully!") //return message to callback
+                    callback("Upload successfully.") //return message to callback
                 }
                 
             })
         },
         error: function(data){
-					callback("upload failed!")
+					callback("upload failed.")
                 }
     })
-
+    }
 }

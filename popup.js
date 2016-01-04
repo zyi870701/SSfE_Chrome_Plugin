@@ -1,6 +1,7 @@
 // Copyright (c) 2012,2013 Peter Coles - http://mrcoles.com/ - All rights reserved.
 // Use of this source code is governed by the MIT License found in LICENSE
 $(document).ready(function() {
+
     
     var background = chrome.extension.getBackgroundPage();
     checkauth();    // Whenever click popup button, load it first to check cookies
