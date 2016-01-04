@@ -42,10 +42,14 @@ $(document).ready(function() {
             $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').hide();
 
         } else if (data == 0) {
-            //$('#test').text("you have to login");
+            //$('#test').text("Error");
             $('#logout,#imagename,#upload,#test2,#wrap').hide();
             $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').show();
-        } else {
+        } else if (data == 2) {
+            $('#test').text("Error, please enter the correct host address.");
+            $('#logout,#imagename,#upload,#test2,#wrap').hide();
+            $('#login,#ACCOUNT,#PASSWORD,#test,label,#SERVER').show();
+        }else {
             $('#test').text(data);
             //$('#test').text("you have to login");
             $('#logout,#imagename,#upload,#test2,#wrap').hide();

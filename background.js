@@ -33,12 +33,13 @@ function login(account, password, callback) {
                 //console.log(res);
                 callback(res['Code']); //return error message 
             }
-        }
+        },
+        error: function(data){
+                    callback(2)
+                }
 
     })
-
 }
-
 
 function logout(callback) {
     //delete all localhost cookies'

@@ -10,7 +10,7 @@
   "background": {
       "scripts": [ "jquery.js","background.js"]
   }, 
-  "permissions": [ "activeTab","tabs", "https://dev.ssfe.in/*","cookies","https://10.1.193.204/*" ],
+  "permissions": [ "activeTab","tabs", "https://*/*","cookies" ],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
