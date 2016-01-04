@@ -1,3 +1,19 @@
+Full Page Screen Capture to SafeSync - a Google Chrome Extension
+=======================
+###Description:
+It is a Google Chrome plugin which could capture web full page screenshots and upload to SafeSync personal folder.
+
+###Open source used:
+1.https://github.com/mrcoles/full-page-screen-capture-chrome-extension
+2.License:MIT
+
+###SafeSync REST API v2 used:
+* POST /api/v2/usersession
+* GET /api/v2/home
+* PUT /api/v2/${obf_id}/snapshots/${file_name}
+
+
+
 Full Page Screen Capture
 ========================
 
